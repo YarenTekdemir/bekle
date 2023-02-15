@@ -1,0 +1,41 @@
+﻿@model IEnumerable<bekle.Models.Attackaccount>
+
+@{
+    ViewBag.Title = "Attack";
+}
+
+<h2>Attack</h2>
+
+
+@foreach (var item in ViewBag.attacks)
+{
+    <tr>
+        <td>
+            @item.test_id
+        </td>
+     
+        <td>
+            @using (Html.BeginForm("Download", "Attack", new { ID = @item.test_id }, FormMethod.Post))
+            {
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Download" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </td>
+        <td>
+            @using (Html.BeginForm("runAttack", "Attack", new { ID = @item.test_id }, FormMethod.Post))
+            {
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Run" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </td>
+    </tr>
+}
+
+
+</table>

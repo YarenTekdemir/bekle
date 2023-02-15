@@ -1,0 +1,56 @@
+﻿@model bekle.Models.UserAccount
+
+@{
+    ViewBag.Title = "LoginSuccess";
+}
+
+<h2>LoginSuccess</h2>
+
+<div>
+    <h4> Successfully Logged In </h4>
+    <h5> You are able to see your information</h5>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usersurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usersurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Change Your İnformation", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<div class=" w3-sidebar w3-light-grey w3-bar-block " style="width:15%">
+    <a href="/Login/Logout/" class="w3-bar-item w3-button"> Log Out </a>
+</div>
+
